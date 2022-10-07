@@ -9,7 +9,7 @@ def render_homepage(request):
     recommendations_channel = grpc.insecure_channel(f"{recommendations_host}:50051")
     recommendations_client = RecommendationsStub(recommendations_channel)
     recommendations_request = RecommendationRequest(
-        user_id=1, category=BookCategory.SCIENCE_FICTION, max_results=3
+        user_id=1, category=BookCategory.MYSTERY, max_results=3
     )
     recommendations_response = recommendations_client.Recommend(
         recommendations_request
